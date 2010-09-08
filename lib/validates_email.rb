@@ -9,7 +9,7 @@ module Perfectline
 
     class EmailValidator < ActiveModel::EachValidator
       def initialize(options)
-        options[:message] ||= "is not a valid email"
+        options.reverse_merge!(:message => "is not valid email")
         super(options)
       end
 
