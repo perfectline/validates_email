@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tanel Suurhans", "Tarmo Lehtpuu"]
-  s.date = %q{2010-09-07}
+  s.date = %q{2010-09-08}
   s.description = %q{Library for validating email addresses in Rails 3 models.}
   s.email = ["tanel.suurhans@perfectline.ee", "tarmo.lehtpuu@perfectline.ee"]
   s.extra_rdoc_files = [
@@ -18,10 +18,10 @@ Gem::Specification.new do |s|
   s.files = [
     "README.markdown",
      "install.rb",
-     "lib/validate_email.rb",
+     "lib/validates_email.rb",
      "rails/init.rb"
   ]
-  s.homepage = %q{http://github.com/perfectline/validate_email/tree/master}
+  s.homepage = %q{http://github.com/perfectline/validates_email/tree/master}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}

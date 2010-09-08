@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/resources')
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'spec'
-require 'validate_email'
+require 'validates_email'
 
 autoload :User,                 'resources/user'
 autoload :UserWithNil,          'resources/user_with_nil'

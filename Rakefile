@@ -11,7 +11,7 @@ Jeweler::Tasks.new do |jewel|
   jewel.name            = 'validate_email'
   jewel.summary         = 'Library for validating email addresses in Rails 3 models.'
   jewel.email           = ['tanel.suurhans@perfectline.ee', 'tarmo.lehtpuu@perfectline.ee']
-  jewel.homepage        = 'http://github.com/perfectline/validate_email/tree/master'
+  jewel.homepage        = 'http://github.com/perfectline/validates_email/tree/master'
   jewel.description     = 'Library for validating email addresses in Rails 3 models.'
   jewel.authors         = ["Tanel Suurhans", "Tarmo Lehtpuu"]
   jewel.files           = FileList["rails/*.rb", "lib/**/*.rb", "*.rb", "MIT-LICENCE", "README.markdown"]
@@ -27,7 +27,7 @@ end
 desc 'Generate documentation plugin.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'ValidateEmail'
+  rdoc.title    = 'ValidatesEmail'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.markdown')
   rdoc.rdoc_files.include('lib/**/*.rb')

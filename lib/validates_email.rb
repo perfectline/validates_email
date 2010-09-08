@@ -4,7 +4,7 @@ require 'active_support/concern'
 require 'mail'
 
 module Perfectline
-  module ValidateEmail
+  module ValidatesEmail
     extend ActiveSupport::Concern
 
     class EmailValidator < ActiveModel::EachValidator
@@ -33,4 +33,4 @@ module Perfectline
   end
 end
 
-ActiveModel::Validations.send(:include, Perfectline::ValidateEmail)
+ActiveModel::Validations.send(:include, Perfectline::ValidatesEmail)

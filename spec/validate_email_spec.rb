@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Enail validation", Perfectline::ValidateEmail::EmailValidator do
+describe "Enail validation", Perfectline::ValidatesEmail::EmailValidator do
 
   context "with regular validator" do
     before do
