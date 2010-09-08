@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
      "spec/resources/user_with_legacy_syntax.rb",
      "spec/resources/user_with_nil.rb",
      "spec/spec_helper.rb",
-     "spec/validate_email_spec.rb"
+     "spec/validates_email_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
