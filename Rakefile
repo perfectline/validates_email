@@ -20,7 +20,6 @@ Jeweler::Tasks.new do |jewel|
   jewel.add_development_dependency 'diff-lcs', '>= 1.1.2'
 
   jewel.add_dependency  'mail', '>= 2.2.5'
-  jewel.add_dependency  'activesupport', '>= 3.0'
   jewel.add_dependency  'activemodel', '>= 3.0'
 end
 

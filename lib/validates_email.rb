@@ -1,12 +1,9 @@
 require 'active_model'
 require 'active_model/validations'
-require 'active_support/concern'
 require 'mail'
 
 module Perfectline
   module ValidatesEmail
-    extend ActiveSupport::Concern
-
     class EmailValidator < ActiveModel::EachValidator
       def initialize(options)
         options.reverse_merge!(:message => "is not valid email")
@@ -33,4 +30,5 @@ module Perfectline
   end
 end
 
-ActiveModel::Validations.send(:include, Perfectline::ValidatesEmail)
+ActiveModel::Validations::HelperMethods.send(:include, Perfectline::ValidatesEmail::ClassMethods)
+ActiveModel::Validations::EmailValidator = Perfectline::ValidatesEmail::EmailValidator

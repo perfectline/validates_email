@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{validate_email}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tanel Suurhans", "Tarmo Lehtpuu"]
-  s.date = %q{2010-09-08}
+  s.date = %q{2010-09-16}
   s.description = %q{Library for validating email addresses in Rails 3 models.}
   s.email = ["tanel.suurhans@perfectline.ee", "tarmo.lehtpuu@perfectline.ee"]
   s.extra_rdoc_files = [
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/perfectline/validates_email/tree/master}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Library for validating email addresses in Rails 3 models.}
   s.test_files = [
     "spec/resources/user.rb",
@@ -39,24 +39,21 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<diff-lcs>, [">= 1.1.2"])
       s.add_runtime_dependency(%q<mail>, [">= 2.2.5"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 3.0"])
       s.add_runtime_dependency(%q<activemodel>, [">= 3.0"])
     else
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<diff-lcs>, [">= 1.1.2"])
       s.add_dependency(%q<mail>, [">= 2.2.5"])
-      s.add_dependency(%q<activesupport>, [">= 3.0"])
       s.add_dependency(%q<activemodel>, [">= 3.0"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<diff-lcs>, [">= 1.1.2"])
     s.add_dependency(%q<mail>, [">= 2.2.5"])
-    s.add_dependency(%q<activesupport>, [">= 3.0"])
     s.add_dependency(%q<activemodel>, [">= 3.0"])
   end
 end
