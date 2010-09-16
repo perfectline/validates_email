@@ -11,7 +11,7 @@ require 'active_record/migration'
 ActiveRecord::Migration.verbose = false
 ActiveRecord::Base.establish_connection(
     "adapter"   => "sqlite3",
-    "database"  => ":memory"
+    "database"  => ":memory:"
 )
 
 require File.join(File.dirname(__FILE__), '..', 'rails', 'init')
