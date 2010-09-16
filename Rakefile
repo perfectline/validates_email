@@ -14,7 +14,7 @@ Jeweler::Tasks.new do |jewel|
   jewel.homepage        = 'http://github.com/perfectline/validates_email/tree/master'
   jewel.description     = 'Library for validating email addresses in Rails 3 models.'
   jewel.authors         = ["Tanel Suurhans", "Tarmo Lehtpuu"]
-  jewel.files           = FileList["rails/*.rb", "lib/**/*.rb", "*.rb", "MIT-LICENCE", "README.markdown"]
+  jewel.files           = FileList["lib/**/*.rb", "*.rb", "MIT-LICENCE", "README.markdown"]
 
   jewel.add_development_dependency 'rspec'
   jewel.add_development_dependency 'diff-lcs', '>= 1.1.2'

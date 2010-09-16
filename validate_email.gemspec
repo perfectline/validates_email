@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{validate_email}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tanel Suurhans", "Tarmo Lehtpuu"]
@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "README.markdown",
+     "init.rb",
      "install.rb",
-     "lib/validates_email.rb",
-     "rails/init.rb"
+     "lib/validate_email.rb"
   ]
   s.homepage = %q{http://github.com/perfectline/validates_email/tree/master}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
      "spec/resources/user_with_ar_legacy.rb",
      "spec/resources/user_with_legacy.rb",
      "spec/resources/user.rb",
-     "spec/validates_email_spec.rb",
+     "spec/validate_email_spec.rb",
      "spec/spec_helper.rb"
   ]
 
