@@ -1,6 +1,4 @@
-require 'active_model/validations'
-
-class UserWithLegacySyntax
+class UserWithLegacy
   include ActiveModel::Validations
 
   attr_accessor :email_address

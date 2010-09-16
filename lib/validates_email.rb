@@ -1,18 +1,21 @@
 require 'active_model'
-require 'active_model/validations'
 require 'mail'
 
-module Perfectline
-  module ValidatesEmail
+module ActiveModel
+  module Validations
     class EmailValidator < ActiveModel::EachValidator
+      
       def initialize(options)
         options.reverse_merge!(:message => "is not valid email")
         super(options)
       end
 
       def validate_each(record, attribute, value)
+        return if options[:allow_nil] && value.nil?
+
         begin
-          mail = Mail::Address.new(value)          
+          mail = Mail::Address.new(value)
+
           unless mail.address == value && mail.domain.split(".").length > 1
             record.errors.add(attribute, options[:message])
           end
@@ -30,5 +33,3 @@ module Perfectline
   end
 end
 
-ActiveModel::Validations::HelperMethods.send(:include, Perfectline::ValidatesEmail::ClassMethods)
-ActiveModel::Validations::EmailValidator = Perfectline::ValidatesEmail::EmailValidator

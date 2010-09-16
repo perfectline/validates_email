@@ -1,6 +1,20 @@
 require 'spec_helper'
 
-describe "Enail validation", Perfectline::ValidatesEmail::EmailValidator do
+describe "Email validation" do
+
+  before(:all) do
+    ActiveRecord::Schema.define(:version => 1) do
+
+      create_table :users, :force => true do |t|
+        t.column :email_address, :string
+      end
+
+    end
+  end
+
+  after(:all) do
+    ActiveRecord::Base.connection.drop_table(:users)
+  end
 
   context "with regular validator" do
     before do
@@ -87,7 +101,7 @@ describe "Enail validation", Perfectline::ValidatesEmail::EmailValidator do
 
   context "with legacy syntax" do
     before do
-      @user = UserWithLegacySyntax.new
+      @user = UserWithLegacy.new
     end
 
     it "should allow nil as email" do
@@ -107,6 +121,28 @@ describe "Enail validation", Perfectline::ValidatesEmail::EmailValidator do
 
     it "should not allow invalid email" do
       @user.email_address = "random"
+      @user.should_not be_valid
+    end
+  end
+
+  context "with ActiveRecord" do
+    before do
+      @user = UserWithAr.new
+    end
+
+    it "should not allow invalid email" do
+      @user.email_address = ""
+      @user.should_not be_valid
+    end
+  end
+
+  context "with ActiveRecord and legacy syntax" do
+    before do
+      @user = UserWithArLegacy.new
+    end
+
+    it "should not allow invalid email" do
+      @user.email_address = ""
       @user.should_not be_valid
     end
   end

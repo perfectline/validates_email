@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/rdoctask'
 require 'rake/clean'
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 require 'jeweler'
 
 desc 'Default: run unit tests.'
@@ -18,6 +18,8 @@ Jeweler::Tasks.new do |jewel|
 
   jewel.add_development_dependency 'rspec'
   jewel.add_development_dependency 'diff-lcs', '>= 1.1.2'
+  jewel.add_development_dependency 'active_record', '>= 3.0.0'
+  jewel.add_development_dependency 'sqlite3-ruby'
 
   jewel.add_dependency  'mail', '>= 2.2.5'
   jewel.add_dependency  'activemodel', '>= 3.0'
@@ -33,7 +35,4 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 desc 'Run all rspec tests'
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.spec_files = FileList["spec/**/*_spec.rb"]
-  spec.spec_opts  = ["--options", "spec/spec.opts"]
-end
+RSpec::Core::RakeTask.new

@@ -1,5 +1,3 @@
-require 'active_model/validations'
-
 class UserWithNil
   include ActiveModel::Validations
 
