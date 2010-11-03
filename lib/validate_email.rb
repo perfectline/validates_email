@@ -6,7 +6,7 @@ module ActiveModel
     class EmailValidator < ActiveModel::EachValidator
       
       def initialize(options)
-        options.reverse_merge!(:message => "is not valid email")
+        options.reverse_merge!(:message => "is not a valid email address")
         super(options)
       end
 
