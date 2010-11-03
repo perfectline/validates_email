@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{validate_email}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tanel Suurhans", "Tarmo Lehtpuu"]
-  s.date = %q{2010-09-16}
+  s.date = %q{2010-11-03}
   s.description = %q{Library for validating email addresses in Rails 3 models.}
   s.email = ["tanel.suurhans@perfectline.ee", "tarmo.lehtpuu@perfectline.ee"]
   s.extra_rdoc_files = [
@@ -27,14 +27,14 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Library for validating email addresses in Rails 3 models.}
   s.test_files = [
-    "spec/resources/user_with_blank.rb",
-     "spec/resources/user_with_nil.rb",
+    "spec/resources/user.rb",
      "spec/resources/user_with_ar.rb",
      "spec/resources/user_with_ar_legacy.rb",
+     "spec/resources/user_with_blank.rb",
      "spec/resources/user_with_legacy.rb",
-     "spec/resources/user.rb",
-     "spec/validate_email_spec.rb",
-     "spec/spec_helper.rb"
+     "spec/resources/user_with_nil.rb",
+     "spec/spec_helper.rb",
+     "spec/validate_email_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
