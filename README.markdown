@@ -39,7 +39,7 @@ The gem only supports Rails 3 (has dependencies in ActiveModel and ActiveSupport
 
 #### I18n
 
-The default error message `is not valid email`.  
+The default error message `is not a valid email address`.  
 You can pass the `:message => "my custom error"` option to your validation to define your own, custom message.
 
 ## Authors
