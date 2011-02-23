@@ -1,26 +1,17 @@
-require 'active_model'
 require 'mail'
 
 module ActiveModel
   module Validations
     class EmailValidator < ActiveModel::EachValidator
-      
-      def initialize(options)
-        options.reverse_merge!(:message => "is not a valid email address")
-        super(options)
-      end
-
       def validate_each(record, attribute, value)
-        return if options[:allow_nil] && value.nil?
-
         begin
           mail = Mail::Address.new(value)
 
           unless mail.address == value && mail.domain.split(".").length > 1
-            record.errors.add(attribute, options[:message])
+            record.errors.add(attribute, :invalid_email, :default => options[:message], :value => value)
           end
         rescue
-          record.errors.add(attribute, options[:message])
+          record.errors.add(attribute, :invalid_email, :default => options[:message], :value => value)
         end
       end
     end
