@@ -39,8 +39,17 @@ The gem only supports Rails 3 (has dependencies in ActiveModel and ActiveSupport
 
 #### I18n
 
-The default error message `is not a valid email address`.  
-You can pass the `:message => "my custom error"` option to your validation to define your own, custom message.
+The error message will be looked up according to the standard ActiveModel::Errors scheme.
+For the above Unicorn class this would be:
+
+ * activemodel.errors.models.unicorn.attributes.email_address.email
+ * activemodel.errors.models.unicorn.email
+ * activemodel.errors.messages.email
+ * errors.attributes.email_address.email
+ * errors.messages.email
+
+A default errors.messages.email of `is not a valid email address` is provided.
+You can also pass the `:message => "my custom error"` option to your validation to define your own custom message.
 
 ## Authors
 

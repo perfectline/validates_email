@@ -19,7 +19,8 @@ Gem::Specification.new do |s|
     "README.markdown",
      "init.rb",
      "install.rb",
-     "lib/validate_email.rb"
+     "lib/validate_email.rb",
+     "lib/locale/en.yml"
   ]
   s.homepage = %q{http://github.com/perfectline/validates_email/tree/master}
   s.rdoc_options = ["--charset=UTF-8"]

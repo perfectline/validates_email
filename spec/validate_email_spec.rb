@@ -55,6 +55,12 @@ describe "Email validation" do
       @user.email_address = "user@example.com"
       @user.should be_valid
     end
+    
+    it "should return an error message" do
+      @user.email_address = "bad"
+      @user.valid?
+      @user.errors[:email_address].should == ["is not a valid email address"]
+    end
   end
 
   context "with allow nil" do
@@ -72,9 +78,15 @@ describe "Email validation" do
       @user.should_not be_valid
     end
 
-    it "shoild allow a valid email address" do
+    it "should allow a valid email address" do
       @user.email_address = "user@example.com"
       @user.should be_valid
+    end
+    
+    it "should return an error message" do
+      @user.email_address = "bad"
+      @user.valid?
+      @user.errors[:email_address].should == ["is not a valid email address"]
     end
   end
 
@@ -96,6 +108,12 @@ describe "Email validation" do
     it "should allow a valid email address" do
       @user.email_address = "user@example.com"
       @user.should be_valid
+    end
+    
+    it "should return an error message" do
+      @user.email_address = "bad"
+      @user.valid?
+      @user.errors[:email_address].should == ["is not a valid email address"]
     end
   end
 
@@ -123,6 +141,12 @@ describe "Email validation" do
       @user.email_address = "random"
       @user.should_not be_valid
     end
+    
+    it "should return an error message" do
+      @user.email_address = "bad"
+      @user.valid?
+      @user.errors[:email_address].should == ["is just wrong!"]
+    end
   end
 
   context "with ActiveRecord" do
@@ -134,6 +158,12 @@ describe "Email validation" do
       @user.email_address = ""
       @user.should_not be_valid
     end
+    
+    it "should return an error message" do
+      @user.email_address = "bad"
+      @user.valid?
+      @user.errors[:email_address].should == ["is not right"]
+    end
   end
 
   context "with ActiveRecord and legacy syntax" do
@@ -144,6 +174,12 @@ describe "Email validation" do
     it "should not allow invalid email" do
       @user.email_address = ""
       @user.should_not be_valid
+    end
+    
+    it "should return an error message" do
+      @user.email_address = "bad"
+      @user.valid?
+      @user.errors[:email_address].should == ["is not a valid email address"]
     end
   end
 
