@@ -2,6 +2,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/resources')
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
+require 'validate_email'
 require 'rspec'
 require 'sqlite3'
 require 'active_record'

@@ -1,3 +1,5 @@
+require 'active_support/i18n'
+I18n.load_path << File.dirname(__FILE__) + '/locale/en.yml'
 require 'active_model'
 require 'mail'
 
@@ -6,12 +8,11 @@ module ActiveModel
     class EmailValidator < ActiveModel::EachValidator
       
       def initialize(options)
-        options.reverse_merge!(:message => "is not a valid email address")
+        options.reverse_merge!(:message => :email)
         super(options)
       end
 
       def validate_each(record, attribute, value)
-        return if options[:allow_nil] && value.nil?
 
         begin
           mail = Mail::Address.new(value)
