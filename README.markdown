@@ -58,4 +58,3 @@ You can also pass the `:message => "my custom error"` option to your validation 
 
 ## License
 Copyright 2010 by PerfectLine LLC (<http://www.perfectline.co.uk>) and is released under the MIT license.
-
