@@ -1,6 +1,6 @@
 require 'rake'
-require 'rake/rdoctask'
 require 'rake/clean'
+require 'rdoc/task'
 require 'rspec/core/rake_task'
 require 'jeweler'
 
