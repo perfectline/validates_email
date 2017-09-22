@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
   s.summary = "Library for validating email addresses in Rails 3 models."
+  s.license = "MIT"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
